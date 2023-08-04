@@ -35,7 +35,7 @@ public class MainController extends HttpServlet {
 		
         String calculate = request.getParameter("calculate");
         
-        System.out.println(result);
+        System.err.println(result);
         if(calculate!=null) {
         	PrintWriter out = response.getWriter();
         	out.println("<h3>Based on the name similarity, the friendship strength between "+myName+" and "+friendName+" is: "+result+"</h3>");
