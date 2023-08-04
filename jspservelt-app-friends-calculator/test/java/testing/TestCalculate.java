@@ -8,7 +8,7 @@ import controller.MainController;
 public class TestCalculate {
 
 	@Test
-	public void testCalculateMethod() {
+	public void TestCalculateMethod() {
 		int result1 = MainController.calculate("John","Alice");
 		System.out.println(result1);
 		int result2= MainController.calculate("John","George");
@@ -22,7 +22,7 @@ public class TestCalculate {
 	}
 	
 	@Test
-	public void testFindSumMethod() {
+	public void TestFindSumMethod() {
 		int result1 = MainController.findSum(250);
 		int result2 = MainController.findSum(550);
 		assertEquals(7, result1);
