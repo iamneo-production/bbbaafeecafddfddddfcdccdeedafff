@@ -35,7 +35,7 @@ public class MainController extends HttpServlet {
 		
         String calculate = request.getParameter("calculate");
         
-        System.err.println(result);
+        System.out.println(result);
         if(calculate!=null) {
         	PrintWriter out = response.getWriter();
         	out.println("<h3>Based on the name similarity, the friendship strength between "+myName+" and "+friendName+" is: "+result+"</h3>");
@@ -52,24 +52,27 @@ public class MainController extends HttpServlet {
 	
 //	Start Enterinng your code here...
 public static int findSum(int num){
-	int sum = 0;
-	while(num>0){
-		sum = sum + (num%10);
-		num = num/10;
-	}
-	return sum;
+    int sum = 0;
+    while(num>0){
+        sum = sum + (num%10);
+        num = num/10;
+    }
+    System.out.println("findSum: num = " + num + ", sum = " + sum);
+    return sum;
 }
-public static int calculate(String myName, String friendName) {
-	int f1 = 0,f2 = 0, FRIENDS;
-	for(int i = 0;i<myName.length();i++){
-		f1 += (int)myName.charAt(i);
-	}
-	for(int i =0;i<friendName.length();i++){
-		f2 += (int)friendName.charAt(i);
-	}
 
-	FRIENDS = (f1 + f2) % 100;
-	return FRIENDS;
+public static int calculate(String myName, String friendName) {
+    int f1 = 0, f2 = 0, FRIENDS;
+    for(int i = 0; i < myName.length(); i++){
+        f1 += (int)myName.charAt(i);
+    }
+    for(int i = 0; i < friendName.length(); i++){
+        f2 += (int)friendName.charAt(i);
+    }
+    FRIENDS = (f1 + f2) % 100;
+    System.out.println("calculate: f1 = " + f1 + ", f2 = " + f2 + ", FRIENDS = " + FRIENDS);
+    return FRIENDS;
 }
+
 	
 }
